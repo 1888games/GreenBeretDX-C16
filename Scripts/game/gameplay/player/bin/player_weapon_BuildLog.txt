@@ -1,0 +1,20 @@
+Output dir: E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\bin
+parsing
+Got 12 errors and 0 warnings while executing:
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\player_weapon.asm 20:7) Error: Unknown symbol 'ZP'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\player_weapon.asm 24:7) Error: Unknown symbol 'ZP'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\player_weapon.asm 35:7) Error: Unknown symbol 'ZP'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\player_weapon.asm 38:7) Error: Unknown symbol 'BULLET'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\player\player_weapon.asm 45:7) Error: Unknown symbol 'ZP'
+  ...
+
+ GainWeapon: {
+
+  lda WeaponMax - 2, y
+  sta ZP.PlayerBullets
+      ^
+
+Error: Unknown symbol 'ZP'
+at line 20, column 7 in player_weapon.asm
+
+

@@ -1,0 +1,284 @@
+.namespace SPRITE {
+
+    * = * "MaskTable"
+
+
+MaskTable:
+    
+    .byte %11111111  // $00: sprite=00000000, all transparent
+    .byte %11111100  // $01: sprite=00000001, bit pair 3 has pixel
+    .byte %11111100  // $02: sprite=00000010, bit pair 3 has pixel  
+    .byte %11111100  // $03: sprite=00000011, bit pair 3 has pixel
+    .byte %11110011  // $04: sprite=00000100, bit pair 2 has pixel
+    .byte %11110000  // $05: sprite=00000101, bit pairs 2,3 have pixels
+    .byte %11110000  // $06: sprite=00000110, bit pairs 2,3 have pixels
+    .byte %11110000  // $07: sprite=00000111, bit pairs 2,3 have pixels
+    .byte %11110011  // $08: sprite=00001000, bit pair 2 has pixel
+    .byte %11110000  // $09: sprite=00001001, bit pairs 2,3 have pixels
+    .byte %11110000  // $0A: sprite=00001010, bit pairs 2,3 have pixels
+    .byte %11110000  // $0B: sprite=00001011, bit pairs 2,3 have pixels
+    .byte %11110011  // $0C: sprite=00001100, bit pair 2 has pixel
+    .byte %11110000  // $0D: sprite=00001101, bit pairs 2,3 have pixels
+    .byte %11110000  // $0E: sprite=00001110, bit pairs 2,3 have pixels
+    .byte %11110000  // $0F: sprite=00001111, bit pairs 2,3 have pixels
+    
+    .byte %11001111  // $10: sprite=00010000, bit pair 1 has pixel
+    .byte %11001100  // $11: sprite=00010001, bit pairs 1,3 have pixels
+    .byte %11001100  // $12: sprite=00010010, bit pairs 1,3 have pixels
+    .byte %11001100  // $13: sprite=00010011, bit pairs 1,3 have pixels
+    .byte %11000011  // $14: sprite=00010100, bit pairs 1,2 have pixels
+    .byte %11000000  // $15: sprite=00010101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $16: sprite=00010110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $17: sprite=00010111, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $18: sprite=00011000, bit pairs 1,2 have pixels
+    .byte %11000000  // $19: sprite=00011001, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $1A: sprite=00011010, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $1B: sprite=00011011, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $1C: sprite=00011100, bit pairs 1,2 have pixels
+    .byte %11000000  // $1D: sprite=00011101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $1E: sprite=00011110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $1F: sprite=00011111, bit pairs 1,2,3 have pixels
+    
+    .byte %11001111  // $20: sprite=00100000, bit pair 1 has pixel
+    .byte %11001100  // $21: sprite=00100001, bit pairs 1,3 have pixels
+    .byte %11001100  // $22: sprite=00100010, bit pairs 1,3 have pixels
+    .byte %11001100  // $23: sprite=00100011, bit pairs 1,3 have pixels
+    .byte %11000011  // $24: sprite=00100100, bit pairs 1,2 have pixels
+    .byte %11000000  // $25: sprite=00100101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $26: sprite=00100110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $27: sprite=00100111, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $28: sprite=00101000, bit pairs 1,2 have pixels
+    .byte %11000000  // $29: sprite=00101001, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $2A: sprite=00101010, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $2B: sprite=00101011, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $2C: sprite=00101100, bit pairs 1,2 have pixels
+    .byte %11000000  // $2D: sprite=00101101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $2E: sprite=00101110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $2F: sprite=00101111, bit pairs 1,2,3 have pixels
+    
+    .byte %11001111  // $30: sprite=00110000, bit pair 1 has pixel
+    .byte %11001100  // $31: sprite=00110001, bit pairs 1,3 have pixels
+    .byte %11001100  // $32: sprite=00110010, bit pairs 1,3 have pixels
+    .byte %11001100  // $33: sprite=00110011, bit pairs 1,3 have pixels
+    .byte %11000011  // $34: sprite=00110100, bit pairs 1,2 have pixels
+    .byte %11000000  // $35: sprite=00110101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $36: sprite=00110110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $37: sprite=00110111, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $38: sprite=00111000, bit pairs 1,2 have pixels
+    .byte %11000000  // $39: sprite=00111001, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $3A: sprite=00111010, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $3B: sprite=00111011, bit pairs 1,2,3 have pixels
+    .byte %11000011  // $3C: sprite=00111100, bit pairs 1,2 have pixels
+    .byte %11000000  // $3D: sprite=00111101, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $3E: sprite=00111110, bit pairs 1,2,3 have pixels
+    .byte %11000000  // $3F: sprite=00111111, bit pairs 1,2,3 have pixels
+    
+    .byte %00111111  // $40: sprite=01000000, bit pair 0 has pixel
+    .byte %00111100  // $41: sprite=01000001, bit pairs 0,3 have pixels
+    .byte %00111100  // $42: sprite=01000010, bit pairs 0,3 have pixels
+    .byte %00111100  // $43: sprite=01000011, bit pairs 0,3 have pixels
+    .byte %00110011  // $44: sprite=01000100, bit pairs 0,2 have pixels
+    .byte %00110000  // $45: sprite=01000101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $46: sprite=01000110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $47: sprite=01000111, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $48: sprite=01001000, bit pairs 0,2 have pixels
+    .byte %00110000  // $49: sprite=01001001, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $4A: sprite=01001010, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $4B: sprite=01001011, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $4C: sprite=01001100, bit pairs 0,2 have pixels
+    .byte %00110000  // $4D: sprite=01001101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $4E: sprite=01001110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $4F: sprite=01001111, bit pairs 0,2,3 have pixels
+    
+    .byte %00001111  // $50: sprite=01010000, bit pairs 0,1 have pixels
+    .byte %00001100  // $51: sprite=01010001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $52: sprite=01010010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $53: sprite=01010011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $54: sprite=01010100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $55: sprite=01010101, all bit pairs have pixels
+    .byte %00000000  // $56: sprite=01010110, all bit pairs have pixels
+    .byte %00000000  // $57: sprite=01010111, all bit pairs have pixels
+    .byte %00000011  // $58: sprite=01011000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $59: sprite=01011001, all bit pairs have pixels
+    .byte %00000000  // $5A: sprite=01011010, all bit pairs have pixels
+    .byte %00000000  // $5B: sprite=01011011, all bit pairs have pixels
+    .byte %00000011  // $5C: sprite=01011100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $5D: sprite=01011101, all bit pairs have pixels
+    .byte %00000000  // $5E: sprite=01011110, all bit pairs have pixels
+    .byte %00000000  // $5F: sprite=01011111, all bit pairs have pixels
+    
+    .byte %00001111  // $60: sprite=01100000, bit pairs 0,1 have pixels
+    .byte %00001100  // $61: sprite=01100001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $62: sprite=01100010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $63: sprite=01100011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $64: sprite=01100100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $65: sprite=01100101, all bit pairs have pixels
+    .byte %00000000  // $66: sprite=01100110, all bit pairs have pixels
+    .byte %00000000  // $67: sprite=01100111, all bit pairs have pixels
+    .byte %00000011  // $68: sprite=01101000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $69: sprite=01101001, all bit pairs have pixels
+    .byte %00000000  // $6A: sprite=01101010, all bit pairs have pixels
+    .byte %00000000  // $6B: sprite=01101011, all bit pairs have pixels
+    .byte %00000011  // $6C: sprite=01101100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $6D: sprite=01101101, all bit pairs have pixels
+    .byte %00000000  // $6E: sprite=01101110, all bit pairs have pixels
+    .byte %00000000  // $6F: sprite=01101111, all bit pairs have pixels
+    
+    .byte %00001111  // $70: sprite=01110000, bit pairs 0,1 have pixels
+    .byte %00001100  // $71: sprite=01110001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $72: sprite=01110010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $73: sprite=01110011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $74: sprite=01110100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $75: sprite=01110101, all bit pairs have pixels
+    .byte %00000000  // $76: sprite=01110110, all bit pairs have pixels
+    .byte %00000000  // $77: sprite=01110111, all bit pairs have pixels
+    .byte %00000011  // $78: sprite=01111000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $79: sprite=01111001, all bit pairs have pixels
+    .byte %00000000  // $7A: sprite=01111010, all bit pairs have pixels
+    .byte %00000000  // $7B: sprite=01111011, all bit pairs have pixels
+    .byte %00000011  // $7C: sprite=01111100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $7D: sprite=01111101, all bit pairs have pixels
+    .byte %00000000  // $7E: sprite=01111110, all bit pairs have pixels
+    .byte %00000000  // $7F: sprite=01111111, all bit pairs have pixels
+    
+    .byte %00111111  // $80: sprite=10000000, bit pair 0 has pixel
+    .byte %00111100  // $81: sprite=10000001, bit pairs 0,3 have pixels
+    .byte %00111100  // $82: sprite=10000010, bit pairs 0,3 have pixels
+    .byte %00111100  // $83: sprite=10000011, bit pairs 0,3 have pixels
+    .byte %00110011  // $84: sprite=10000100, bit pairs 0,2 have pixels
+    .byte %00110000  // $85: sprite=10000101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $86: sprite=10000110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $87: sprite=10000111, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $88: sprite=10001000, bit pairs 0,2 have pixels
+    .byte %00110000  // $89: sprite=10001001, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $8A: sprite=10001010, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $8B: sprite=10001011, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $8C: sprite=10001100, bit pairs 0,2 have pixels
+    .byte %00110000  // $8D: sprite=10001101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $8E: sprite=10001110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $8F: sprite=10001111, bit pairs 0,2,3 have pixels
+    
+    .byte %00001111  // $90: sprite=10010000, bit pairs 0,1 have pixels
+    .byte %00001100  // $91: sprite=10010001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $92: sprite=10010010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $93: sprite=10010011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $94: sprite=10010100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $95: sprite=10010101, all bit pairs have pixels
+    .byte %00000000  // $96: sprite=10010110, all bit pairs have pixels
+    .byte %00000000  // $97: sprite=10010111, all bit pairs have pixels
+    .byte %00000011  // $98: sprite=10011000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $99: sprite=10011001, all bit pairs have pixels
+    .byte %00000000  // $9A: sprite=10011010, all bit pairs have pixels
+    .byte %00000000  // $9B: sprite=10011011, all bit pairs have pixels
+    .byte %00000011  // $9C: sprite=10011100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $9D: sprite=10011101, all bit pairs have pixels
+    .byte %00000000  // $9E: sprite=10011110, all bit pairs have pixels
+    .byte %00000000  // $9F: sprite=10011111, all bit pairs have pixels
+    
+    .byte %00001111  // $A0: sprite=10100000, bit pairs 0,1 have pixels
+    .byte %00001100  // $A1: sprite=10100001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $A2: sprite=10100010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $A3: sprite=10100011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $A4: sprite=10100100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $A5: sprite=10100101, all bit pairs have pixels
+    .byte %00000000  // $A6: sprite=10100110, all bit pairs have pixels
+    .byte %00000000  // $A7: sprite=10100111, all bit pairs have pixels
+    .byte %00000011  // $A8: sprite=10101000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $A9: sprite=10101001, all bit pairs have pixels
+    .byte %00000000  // $AA: sprite=10101010, all bit pairs have pixels
+    .byte %00000000  // $AB: sprite=10101011, all bit pairs have pixels
+    .byte %00000011  // $AC: sprite=10101100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $AD: sprite=10101101, all bit pairs have pixels
+    .byte %00000000  // $AE: sprite=10101110, all bit pairs have pixels
+    .byte %00000000  // $AF: sprite=10101111, all bit pairs have pixels
+    
+    .byte %00001111  // $B0: sprite=10110000, bit pairs 0,1 have pixels
+    .byte %00001100  // $B1: sprite=10110001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $B2: sprite=10110010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $B3: sprite=10110011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $B4: sprite=10110100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $B5: sprite=10110101, all bit pairs have pixels
+    .byte %00000000  // $B6: sprite=10110110, all bit pairs have pixels
+    .byte %00000000  // $B7: sprite=10110111, all bit pairs have pixels
+    .byte %00000011  // $B8: sprite=10111000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $B9: sprite=10111001, all bit pairs have pixels
+    .byte %00000000  // $BA: sprite=10111010, all bit pairs have pixels
+    .byte %00000000  // $BB: sprite=10111011, all bit pairs have pixels
+    .byte %00000011  // $BC: sprite=10111100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $BD: sprite=10111101, all bit pairs have pixels
+    .byte %00000000  // $BE: sprite=10111110, all bit pairs have pixels
+    .byte %00000000  // $BF: sprite=10111111, all bit pairs have pixels
+    
+    .byte %00111111  // $C0: sprite=11000000, bit pair 0 has pixel
+    .byte %00111100  // $C1: sprite=11000001, bit pairs 0,3 have pixels
+    .byte %00111100  // $C2: sprite=11000010, bit pairs 0,3 have pixels
+    .byte %00111100  // $C3: sprite=11000011, bit pairs 0,3 have pixels
+    .byte %00110011  // $C4: sprite=11000100, bit pairs 0,2 have pixels
+    .byte %00110000  // $C5: sprite=11000101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $C6: sprite=11000110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $C7: sprite=11000111, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $C8: sprite=11001000, bit pairs 0,2 have pixels
+    .byte %00110000  // $C9: sprite=11001001, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $CA: sprite=11001010, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $CB: sprite=11001011, bit pairs 0,2,3 have pixels
+    .byte %00110011  // $CC: sprite=11001100, bit pairs 0,2 have pixels
+    .byte %00110000  // $CD: sprite=11001101, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $CE: sprite=11001110, bit pairs 0,2,3 have pixels
+    .byte %00110000  // $CF: sprite=11001111, bit pairs 0,2,3 have pixels
+    
+    .byte %00001111  // $D0: sprite=11010000, bit pairs 0,1 have pixels
+    .byte %00001100  // $D1: sprite=11010001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $D2: sprite=11010010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $D3: sprite=11010011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $D4: sprite=11010100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $D5: sprite=11010101, all bit pairs have pixels
+    .byte %00000000  // $D6: sprite=11010110, all bit pairs have pixels
+    .byte %00000000  // $D7: sprite=11010111, all bit pairs have pixels
+    .byte %00000011  // $D8: sprite=11011000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $D9: sprite=11011001, all bit pairs have pixels
+    .byte %00000000  // $DA: sprite=11011010, all bit pairs have pixels
+    .byte %00000000  // $DB: sprite=11011011, all bit pairs have pixels
+    .byte %00000011  // $DC: sprite=11011100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $DD: sprite=11011101, all bit pairs have pixels
+    .byte %00000000  // $DE: sprite=11011110, all bit pairs have pixels
+    .byte %00000000  // $DF: sprite=11011111, all bit pairs have pixels
+    
+    .byte %00001111  // $E0: sprite=11100000, bit pairs 0,1 have pixels
+    .byte %00001100  // $E1: sprite=11100001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $E2: sprite=11100010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $E3: sprite=11100011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $E4: sprite=11100100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $E5: sprite=11100101, all bit pairs have pixels
+    .byte %00000000  // $E6: sprite=11100110, all bit pairs have pixels
+    .byte %00000000  // $E7: sprite=11100111, all bit pairs have pixels
+    .byte %00000011  // $E8: sprite=11101000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $E9: sprite=11101001, all bit pairs have pixels
+    .byte %00000000  // $EA: sprite=11101010, all bit pairs have pixels
+    .byte %00000000  // $EB: sprite=11101011, all bit pairs have pixels
+    .byte %00000011  // $EC: sprite=11101100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $ED: sprite=11101101, all bit pairs have pixels
+    .byte %00000000  // $EE: sprite=11101110, all bit pairs have pixels
+    .byte %00000000  // $EF: sprite=11101111, all bit pairs have pixels
+    
+    .byte %00001111  // $F0: sprite=11110000, bit pairs 0,1 have pixels
+    .byte %00001100  // $F1: sprite=11110001, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $F2: sprite=11110010, bit pairs 0,1,3 have pixels
+    .byte %00001100  // $F3: sprite=11110011, bit pairs 0,1,3 have pixels
+    .byte %00000011  // $F4: sprite=11110100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $F5: sprite=11110101, all bit pairs have pixels
+    .byte %00000000  // $F6: sprite=11110110, all bit pairs have pixels
+    .byte %00000000  // $F7: sprite=11110111, all bit pairs have pixels
+    .byte %00000011  // $F8: sprite=11111000, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $F9: sprite=11111001, all bit pairs have pixels
+    .byte %00000000  // $FA: sprite=11111010, all bit pairs have pixels
+    .byte %00000000  // $FB: sprite=11111011, all bit pairs have pixels
+    .byte %00000011  // $FC: sprite=11111100, bit pairs 0,1,2 have pixels
+    .byte %00000000  // $FD: sprite=11111101, all bit pairs have pixels
+    .byte %00000000  // $FE: sprite=11111110, all bit pairs have pixels
+    .byte %00000000  // $FF: sprite=11111111, all bit pairs have pixels
+
+
+    MaskTableEnd:
+    .print ("MASKTABLE..." + (MaskTableEnd - MaskTable))
+
+ }

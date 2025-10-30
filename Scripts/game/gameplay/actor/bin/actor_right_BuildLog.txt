@@ -1,0 +1,20 @@
+Output dir: E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\bin
+parsing
+Got 20 errors and 0 warnings while executing:
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\actor_right.asm 7:7) Error: Unknown symbol 'ZP'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\actor_right.asm 8:8) Error: Unknown symbol 'STATE_WALK_RIGHT'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\actor_right.asm 11:8) Error: Unknown symbol 'STATE_CROUCH_RIGHT'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\actor_right.asm 16:8) Error: Unknown symbol 'STATE_CROUCH_LEFT'
+  (E:\Dropbox\C64\Projects\Green Beret C16\Scripts\game\gameplay\actor\actor_right.asm 19:8) Error: Unknown symbol 'STATE_CROUCH_RIGHT'
+  ...
+
+ GoRight: {
+
+ 
+  lda ZP.SpriteState, x
+      ^
+
+Error: Unknown symbol 'ZP'
+at line 7, column 7 in actor_right.asm
+
+

@@ -1,0 +1,9 @@
+.label GameMode=$100a
+.label upstart_end=$100b
+.label Checkpoint=$100c
+.label Entry=$100d
+.label MapCopied=$100b
+.label CurrentStage=$1004
+.label UpstartEnd=$100d
+.label Upstart=$1001
+.label Main=$100d

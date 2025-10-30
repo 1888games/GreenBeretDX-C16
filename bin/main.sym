@@ -1,0 +1,1220 @@
+.label LUMINANCE_5=$50
+.label LUMINANCE_6=$60
+.label LUMINANCE_3=$30
+.label WEAPON_ENEMY_GRENADE=$5
+.label ENEMY_CANNON=$3
+.label LUMINANCE_4=$40
+.label LUMINANCE_1=$10
+.label WEAPON_GRENADE=$4
+.label LUMINANCE_2=$20
+.label LUMINANCE_0=$0
+.label DOWN_MASK=$4
+.label MAP_TEMP_LOCATION=$3000
+.label STATE_WALK_LEFT=$10
+.namespace SCREEN {
+  .label ClearSky=$f2a {
+    .label Loop=$f2e
+  }
+  .label SetFineScroll=$f88 {
+  }
+  .label DrawFloor=$f18 {
+    .label FloorLoop=$f1a
+    .label Exit=$f29
+  }
+  .label Screen=$f18
+  .label Scroll=$f97 {
+    .label NoScroll=$f9d
+    .label NoWrap=$fc0
+    .label DoScroll=$fa2
+    .label Scroll=$fd2
+    .label NotNextSector=$fbe
+  }
+  .label ScreenEnd=$fee
+  .label CheckScrollAdjust=$f7a {
+  }
+  .label ScrollLookup=$f93
+  .label Clear=$fda {
+    .label Loop=$fde
+  }
+}
+.label MAP_ADDRESS=$200
+.label GAME_MODE_DEAD=$1
+.label IRQControlRegister1=$304
+.label LUMINANCE_7=$70
+.label ENEMY_MINE=$4
+.label GUN=$1
+.label STATE_ROCKET=$28
+.label STATE_WALK_RIGHT=$0
+.label STATE_KICK_LEFT=$1b
+.namespace PLAYER {
+  .label Player=$15c0
+  .label DeadUpdate=$174d {
+    .label NotDone=$175c
+  }
+  .label FireWeapon=$15d4 {
+    .label FireRight=$15ec
+    .label FireLeft=$15e3
+    .label NotGrenade=$1609
+    .label IsNotCrouchingRight=$1614
+    .label IsCrouching=$161a
+    .label Exit=$15f3
+  }
+  .label PlayerEnd=$178a
+  .label StabWeapon=$161f {
+    .label DoStab=$1644
+    .label StabWalk=$1641
+    .label StabCrouch=$163b
+    .label NoAdjust=$1652
+  }
+  .label SetDead=$175f {
+    .label NotCrawling=$1789
+  }
+  .label Initialise=$16b7 {
+  }
+  .label WeaponMax=$166d
+  .label WeaponChar=$1670 {
+  }
+  .label CheckFireButtonHold=$15c0 {
+    .label NotFire=$15ca
+    .label Exit=$15c9
+  }
+  .label FrameUpdate=$16ee {
+    .label NoControl=$172a
+    .label Ready=$1727
+    .label NotDead=$16fd
+    .label SkipAddress=$1710
+    .label Restore=$1707
+    .label SkipRestorePlayer=$170d
+    .label CheckScroll=$16f5
+  }
+  .label DrawAmmo=$168b {
+    .label Loop=$169c
+    .label DrawBullet=$16a6
+    .label Draw=$16a7 {
+    }
+  }
+  .label GainWeapon=$1675 {
+    .label ByY=$1679
+  }
+  .label MoveInAir=$1735 {
+    .label NotLeft=$174c
+    .label NotRight=$1742
+  }
+}
+.label ZP=$2 {
+  .label PlayerColour=$10a
+  .label SpriteStoredColours=$9e
+  .label EnemyX=$33
+  .label EnemyY=$43
+  .label SpriteStoredChars=$62
+  .label CurrentSectorLength=$22
+  .label SectorDataAddress=$2a
+  .label SpriteJoystick=$152
+  .label EnemyType=$15c
+  .label SpriteWeapon=$175
+  .label CurrentSectorID=$199
+  .label SpriteCharAddress=$2e
+  .label SpriteBullets=$165
+  .label ScrollStopFlag=$1b2
+  .label SectorMapAddress=$2c
+  .label SpriteX=$32
+  .label SpriteY=$42
+  .label SFXChannel1_Timer=$16
+  .label SpawnIndex=$1b0
+  .label LivesRemaining=$1d
+  .label BulletXSpeed=$16f
+  .label SectorXOffset=$21
+  .label PlayerTimer=$f0
+  .label SpriteState=$52
+  .label SpriteOffset=$11a
+  .label FineScroll=$26
+  .label ScreenColumnsDrawn=$20
+  .label Frame=$b
+  .label SpriteCrawling=$148
+  .label Colour=$a
+  .label SpriteTime=$100
+  .label BulletX=$3c
+  .label SpriteFrame=$e6
+  .label BulletY=$4c
+  .label PlayerCrawling=$148
+  .label ScreenAddress=$2
+  .label EnemyState=$53
+  .label ThisSectorXOffset=$27
+  .label EnemyPreviousState=$135
+  .label PlayerMasterState=$12a
+  .label ColourAddress=$5
+  .label SFXChannel2_Duration=$19
+  .label OnGround=$19b
+  .label JoyTemp=$1a
+  .label Temp3=$1e
+  .label Temp2=$197
+  .label Temp1=$196
+  .label BulletColour=$114
+  .label CurrentSectorNumber=$198
+  .label BulletStoredColours=$e0
+  .label SpriteDataAddress=$30
+  .label BulletState=$5c
+  .label CurrentSectorDrawn=$24
+  .label EnemyFrame=$e7
+  .label SpritePreviousState=$134
+  .label PlayerVelocity=$185
+  .label PlayerLastFrameState=$13e
+  .label SpriteID=$c
+  .label GunnerSpawnTimer=$1a4
+  .label HighScore=$1aa
+  .label EnemyLastFrameState=$13f
+  .label ValidFloors=$1b4
+  .label CurrentStage=$19e
+  .label EnemyTime=$101
+  .label Counter=$195
+  .label SFXChannel2_Timer=$17
+  .label BulletSource=$17f
+  .label BulletVelocity=$18f
+  .label LadderBelow=$19d
+  .label SFXChannel1_Address=$10
+  .label JustScrolled=$1c
+  .label SpriteVelocity=$185
+  .label EnemyOffset=$11b
+  .label LeadEnemyCount=$1a1
+  .label FrameSwitch=$4
+  .label UpdateScore=$1af
+  .label EnemyMasterState=$12b
+  .label SpriteMasterState=$12a
+  .label StageBackgroundColour=$19f
+  .label BulletOffset=$124
+  .label NumSectors=$1b3
+  .label EnemyJoystick=$153
+  .label SFXChannel1_Duration=$18
+  .label JOY_READING=$152
+  .label Score=$1a5
+  .label EnemyWeapon=$176
+  .label FireFrames=$1f
+  .label PlayerY=$42
+  .label SFXChannel1_Index=$14
+  .label PlayerX=$32
+  .label ScrollSectorLength=$29
+  .label BulletTimer=$fa
+  .label HurryTimer=$1b
+  .label Cooldown=$d
+  .label PlayerWeapon=$175
+  .label TenThousandsMarker=$1b9
+  .label IsDead=$19c
+  .label PreviousFrame=$f
+  .label Stabbing=$e
+  .label PlayerOffset=$11a
+  .label SFXChannel2_Index=$15
+  .label PlayerFrame=$e6
+  .label ScrollSectorNumber=$28
+  .label PlayerTime=$100
+  .label HudEndLine=$9
+  .label CurrentSectorTruncate=$23
+  .label PlayerPreviousState=$134
+  .label EnemyCrawling=$149
+  .label SFXChannel2_Address=$12
+  .label EnemyColour=$10b
+  .label SpriteLastFrameState=$13e
+  .label PlayerBullets=$165
+  .label SourceAddress=$7
+  .label EnemyTimer=$f1
+  .label PlayerState=$52
+  .label EnemyCount=$1a0
+  .label LeadEnemyType=$1a3
+  .label LeadSpawnTimer=$1a2
+  .label EnemyVelocity=$186
+  .label StartSpawnIndex=$1b1
+  .label EnemyBullets=$166
+  .label RowsDrawn=$25
+  .label SpriteTimer=$f0
+  .label BulletStoredChars=$da
+  .label OverLadder=$19a
+  .label SpriteColour=$10a
+}
+.label CLIMB_TIME=$2
+.label GAME_MODE_COMPLETE=$4
+.label GAME_MODE_PLAY=$2
+.namespace MAP {
+  .label RightLadders2=$300e
+  .label Sector1=$3036
+  .label Sector2=$314a
+  .label Sector3=$320a
+  .label Sector4=$332a
+  .label Sector5=$34aa
+  .label SectorIDs2=$300f
+  .label SectorMapData=$3036
+  .label GirderColour=$a
+  .label LeftLadders=$20d
+  .label GetSectorData=$14b4 {
+    .label NotFirst=$14d8
+  }
+  .label RightLadders=$20e
+  .label Luminances2=$3001
+  .label MapLoad=$143e
+  .label TrucksColour=$d
+  .label SectorData=$301d
+  .label Sector6=$35ca
+  .label DrawSector=$14d9 {
+    .label Okay=$1504
+    .label Done=$1551
+    .label StoreChar=$150b
+    .label StoreColour=$1514
+    .label LoadChar=$1508
+    .label CheckLoop=$14f8
+    .label CharLoop=$1508
+  }
+  .label CopyMapTo200=$147b {
+    .label Loop=$147d
+  }
+  .label SectorIDs=$20f
+  .label LeftLadders2=$300d
+  .label ForestColour=$9
+  .label MapLoadEnd=$15c0
+  .label NumSectors=$200
+  .label EndLevel=$374a
+  .label Charset=$3800
+  .label StageBackgrounds=$143e
+  .label NumSectors2=$3000
+  .label Luminances=$201
+  .label MissilesColour=$9
+  .label CalculateMapAddresses=$1442 {
+  }
+  .label FillScreen=$1552 {
+    .label SectorLoop=$156d
+    .label DoneAll=$15bf
+    .label NotSky=$155c
+    .label ReachedEnd=$15b6
+    .label NotLast=$15bc
+  }
+}
+.label STATE_CROUCH_STAB_RIGHT=$c
+.label MapAddress=$200
+.label YELLOW_MULT=$f
+.label UP_MASK=$8
+.label ONE=$1
+.label STATE_CROUCH_STAB_LEFT=$1c
+.label IRQ=$102d {
+  .label DummyIRQ=$1036 {
+  }
+  .label IRQEnd=$10ca
+  .label IRQ=$102d
+  .label HudBeginIRQ=$102d {
+  }
+  .label MainIRQ=$108f {
+    .label SkipFrame=$10b6
+    .label DoneIRQ=$10b6
+    .label CheckFrame=$10a8
+  }
+  .label HudIRQLine=$0
+  .label HudEndLine=$30
+  .label SetMainIRQ=$105e {
+  }
+  .label HudEndIRQ=$106e {
+  }
+  .label MultiplexerIRQLine=$14
+  .label BeginIRQCode=$103a {
+  }
+  .label MainIRQLine=$be
+  .label ResetBorderIRQLine=$0
+}
+.label PURPLE_MULT=$c
+.label STATE_CROUCH_RIGHT=$a
+.label ENEMY_CANNON_FODDER=$0
+.label ShowDebug=$3800
+.label GAME_MODE_TITLE=$0
+.label ENEMY_DOG=$a
+.label SCROLL_THRESHOLD=$12
+.namespace SOUND {
+  .label SnareData=$2aba
+  .label LEN_32=$3
+  .label Sound=$2aba
+  .label Duration=$2b12
+  .label REL_FREG=$80
+  .label N01=$2
+  .label N12=$23
+  .label N02=$5
+  .label N16=$2f
+  .label N04=$b
+  .label SoundEnd=$2bc0
+  .label N06=$11
+  .label BassData=$2ae8
+  .label SET_FREQ=$0
+  .label N08=$17
+  .label UpdateChannel=$2b14 {
+    .label Exit2=$2b7d
+    .label Loop=$2b7e
+    .label CheckTimer=$2b28
+    .label Okay=$2b57
+    .label GetNote=$2b3b
+    .label Address=$2b41
+    .label SetVolume0=$2b1f
+    .label NextNote=$2b2f
+    .label StoreFreq=$2b7a
+    .label Csharp=$2b78
+    .label Exit=$2b2e
+  }
+  .label Volume0=$2b0e
+  .label PlaySFX=$2b85 {
+  }
+  .label VolumeOn=$2b10
+}
+.label SFX_CHANNEL_2=$2a9
+.label ENEMY_FLAME_THROWER=$d
+.label SFX_CHANNEL_1=$2a8
+.label ALL_ON=$ff
+.label STATE_CANNON=$22
+.label ENEMY_SUPPLY_ROCKET=$6
+.label STATE_GRENADES=$2a
+.namespace ACTOR {
+  .label GoUp=$18a8 {
+    .label NotClimbingYet=$18ae
+    .label AlreadyClimbing=$18d1
+    .label NoLadder=$18b6
+    .label JoinLadder=$18b3
+    .label FinishClimbing=$18db
+    .label Exit=$18d0
+  }
+  .label SetWalkTime=$17ea {
+  }
+  .label ResetAfterClimb=$194b {
+    .label GoLeft=$196c
+    .label GoRight=$1972
+    .label Exit=$1971
+  }
+  .label AdvanceFrame=$17f0 {
+  }
+  .label GoLeft=$17f9 {
+    .label Okay=$1801
+    .label NotMoved=$183a
+    .label NotCrouchRight=$1810
+    .label NoScroll=$1829
+    .label Move=$1838
+    .label NotCrouching=$1807
+    .label Exit=$180f
+    .label NotKick=$1822
+  }
+  .label GoRight=$178a {
+    .label PlayerNotMoved=$17dd
+    .label NotCrouchingLeft=$179d
+    .label SkipScroll=$17c0
+    .label NotPlayer=$17e3
+    .label NotCrouching=$1794
+    .label PlayerMoved=$17d3
+    .label IsPlayer=$17c8
+    .label NotKick=$17af
+    .label Okay=$17ce
+    .label NotMoved=$17ea
+    .label AlreadyWalking=$17c4
+    .label MoveSprite=$17e8
+    .label Exit=$179c
+  }
+  .label GoDown=$18e0 {
+    .label NotClimbing=$18f3
+    .label NotLanded=$18ee
+    .label DontJoinLadder=$1902
+    .label AlreadyCrouching=$192a
+    .label IsPlayer=$1927
+  }
+  .label SetClimbState=$1983 {
+  }
+  .label MakeWalk=$183d {
+  }
+  .label Control=$1991 {
+    .label NotUp=$19df
+    .label StillLoaded=$19c7
+    .label Stab=$19ca
+    .label NotDown=$19d6
+    .label Fire=$19b5
+    .label NotLeft=$19a9
+    .label NotFire=$19cd
+    .label NotRight=$19a0
+  }
+  .label Actor=$178a
+  .label CheckReleaseDown=$192b {
+    .label NotCrouching=$194a
+    .label IsPlayer=$1947
+  }
+  .label CheckJump=$1844 {
+    .label GoingDown=$1853
+    .label Landed=$1858
+    .label DoGravity=$1897
+    .label NoJump=$18a7
+    .label GoingUp=$1889
+    .label CanFall=$1869
+    .label Exit=$1868
+  }
+  .label SetClimbTime=$1978 {
+    .label Skip=$197c
+  }
+  .label ActorEnd=$19e2
+}
+.label MAX_SPRITES=$a
+.label SFX_ALARM=$8
+.label PLAYER_SPRITE_ID=$0
+.label STATE_DOG_RIGHT=$2b
+.label STATE_FLAME=$29
+.label ENEMY_CRAWLER=$9
+.label STATE_SHOOT_LEFT=$1f
+.namespace BULLET {
+  .label Bullet=$2473
+  .label DoGrenadeArc=$25f3 {
+    .label Landed=$2610
+    .label CheckGravity=$2640
+    .label DoGravity=$265a
+    .label PlayerFired=$2608
+    .label NotDelete=$260b
+    .label NoJump=$266a
+    .label GoingUp=$264a
+    .label CanFall=$2616
+  }
+  .label CheckPlayerCollision=$2477 {
+    .label NoCollision=$249b
+    .label NotCrawling=$2485
+    .label CheckX=$248e
+  }
+  .label XSize=$2475
+  .label BulletEnd=$26b9
+  .label AI=$26a7 {
+    .label IsFirstFrame=$26b3
+    .label NotFirstFrame=$26b0
+  }
+  .label Initialise=$2670 {
+    .label Loop=$2674
+    .label Exit=$2679
+  }
+  .label Update=$267a {
+    .label DrawBullet=$269c
+    .label CheckBulletReady=$268c
+    .label NoScroll2=$2689
+    .label BulletReady=$2695
+    .label Exit=$26a6
+  }
+  .label CheckCollisions=$249c {
+    .label Loop=$24ac
+    .label EnemyBullet=$24aa
+    .label EndLoop=$24d9
+  }
+  .label GrenadeCollisionPlayer=$2527 {
+    .label NoCollision=$2545
+  }
+  .label Move=$259f {
+    .label NotGrenade=$25be
+    .label IsKnife=$25a5
+    .label IsGrenade=$25b7
+    .label PlayerFired=$25e8
+    .label StoreTime=$25f0
+    .label CheckType=$259f
+    .label NotKnife=$25b3
+    .label GoLeft=$25c4
+    .label GoRight=$25cf
+    .label Exit=$25bd
+    .label NoWrapRight=$25dc
+  }
+  .label GrenadeCollisionEnemies=$2548 {
+    .label Loop=$254c
+    .label NoCollision=$2569
+  }
+  .label YSize=$2473
+  .label Fire=$256f {
+    .label Loop=$2572
+    .label Found=$257d
+  }
+  .label BulletCharColour=$266b
+  .label WeaponSpeed=$259b
+  .label CancelBullet=$26b4 {
+  }
+  .label KillEnemy=$24df {
+    .label DoScore=$24fe
+    .label NotKnife=$24fc
+    .label EndLoop=$2526
+    .label NotCrawling=$2513
+  }
+}
+.label STATE_STAB_LEFT=$18
+.label VIDEO_OFFSET=$2800
+.label STATE_MINE=$26
+.label ENEMY_GRENADIER=$c
+.label PAL=$0
+.label SFX_CORRECT=$7
+.label ENEMY_KICKBOXER=$2
+.label ZERO=$0
+.label INPUT=$fee {
+  .label JOY_RIGHT=$f7
+  .label joyLeftMask=$4
+  .label joyRightMask=$8
+  .label joyUpDownOff=$3
+  .label joyFireMask=$40
+  .label joyDownMask=$2
+  .label JOY_UP=$fe
+  .label JOY_DOWN=$fd
+  .label Input=$fee
+  .label JOY_LEFT=$fb
+  .label ReadJoystick=$fee {
+  }
+  .label InputEnd=$fff
+  .label joyUpMask=$1
+  .label JOY_FIRE=$bf
+}
+.namespace GAME_OVER {
+  .label Row0=$12f3
+  .label DrawText=$12fd {
+    .label Loop=$12ff
+  }
+  .label Loop=$130e {
+    .label Okay=$1324
+  }
+  .label GameOverEnd=$132a
+  .label GameOver=$12e9
+  .label NameRow=$6
+  .label Show=$12e9 {
+  }
+  .label CharStart=$f
+}
+.label STATE_CANNON_DEAD=$23
+.label LEFT_MASK=$1
+.label FACE_LEFT_OFFSET=$2c
+.label STATE_DEAD_RIGHT=$9
+.label GREEN_MULT=$d
+.label CHARSET_ADDRESS=$3800
+.label GAME_MODE_OVER=$3
+.label SFX_CATCH=$2
+.label PAL_NTSC_Flag=$2a6
+.label MAX_ENEMIES=$9
+.label MAP_LOCATION=$200
+.label GRENADE=$4
+.namespace ENEMY {
+  .label XAdd=$1c09
+  .label SupplyRunner_Update=$1ee1 {
+    .label MakeOne=$1ef9
+    .label StoreTime=$1efb
+    .label IsCrouching=$1ee7
+    .label NoLongerCrouching=$1eed
+    .label Exit=$1f04
+  }
+  .label DG=$a
+  .label SpawnSupplyRunner=$1e85 {
+    .label CrouchingEnemy=$1e99
+    .label NoDecrease=$1e8f
+  }
+  .label XSize=$1c0d
+  .label UpdateFunctions_LSB=$2319
+  .label CheckKickboxerSpawn=$1cae {
+    .label Spawn=$1cb8
+    .label NotKickboxer=$1cc4
+  }
+  .label GetRandomY=$1d92 {
+    .label Loop=$1d9b
+    .label NotValid=$1daf
+    .label UseGround=$1db4
+    .label Exit=$1db7
+  }
+  .label CheckTriggered=$1eb5 {
+    .label Trigger=$1ed0
+    .label Exit=$1ee0
+  }
+  .label Update=$2364 {
+    .label Okay=$2375
+    .label CheckJumping=$23a5
+    .label CheckEnemyReady=$2378
+    .label NoScroll=$2375
+    .label NotDead=$238c
+    .label EnemyReady=$239e
+    .label CheckActive=$2366
+    .label DrawSprite=$23a8
+  }
+  .label Crawler_Update=$1f65 {
+    .label NoMove=$1f6f
+    .label Exit=$1f74
+  }
+  .label DT=$4e
+  .label JUMP_VELOCITY=$4d
+  .label Enemy=$19e2
+  .label CheckJump=$244a {
+    .label DoJump=$246a
+    .label CheckJumpRight=$2462
+    .label CheckJumpLeft=$2455
+    .label Exit=$2461
+  }
+  .label KickChance=$1e4c
+  .label EnemyOffset=$21ad
+  .label EnemyType=$2261
+  .label EnemyColours=$1c67
+  .label HurryTimers=$1caa
+  .label SpawnFlameThrower=$1f15 {
+  }
+  .label Spawn=$1c75 {
+    .label Loop=$1c7b
+    .label Found=$1c86
+    .label StoreStuff=$1c87
+    .label Exit=$1ca9
+  }
+  .label CheckLadder=$241c {
+    .label GoUp=$2444
+    .label NoClimb=$2449
+    .label Exit=$2437
+    .label NoJoinDown=$2438
+  }
+  .label DOG_THRESHOLD=$6
+  .label YAdd=$1c11
+  .label MN=$4
+  .label CheckPlayerCollision=$1c19 {
+    .label PickupWeapon=$1c57
+    .label NotDead=$1c37
+    .label SkipY=$1c37
+    .label NotCrawling=$1c22
+    .label NotWeapon=$1c64
+    .label Exit=$1c36
+  }
+  .label AI=$23ae {
+    .label Delete=$23ce
+    .label Okay=$23dc
+    .label SetInactive=$23d8
+    .label Update=$23c3
+    .label SkipUpdate=$23c6
+  }
+  .label EnemySector=$20f9
+  .label JUMP_DISTANCE=$b
+  .label SetupGrenadier=$1f47 {
+  }
+  .label FrameUpdate=$2335 {
+    .label BossInPlay=$2347
+    .label InitialiseBoss=$2359
+    .label BossSpawning=$2345
+    .label NormalPlay=$235a
+    .label WaitingForClear=$234a
+    .label NoSpawn=$2363
+    .label Exit=$2363
+  }
+  .label MineSpawn=$1e50 {
+  }
+  .label CheckLeadSpawn=$1dd6 {
+    .label DoneLead=$1e4b
+    .label CheckLeadEnemies=$1dd6
+    .label ReadyToSpawn=$1dfc
+    .label NoneToSpawn=$1de8
+    .label SetupLeadSpawn=$1e40
+    .label StopSpawning=$1e2c
+    .label NoKick=$1e3a
+    .label Exit=$1de7
+    .label SaveLeadSpawn=$1e45
+  }
+  .label RL=$b
+  .label SpawnIndexes=$2315
+  .label RocketLauncher_Update=$1f26 {
+    .label IsCrouching=$1f2c
+    .label NoLongerCrouching=$1f36
+    .label Exit=$1f39
+  }
+  .label Kickboxer_Update=$1bc2 {
+    .label DoJump=$1bf0
+    .label CheckKickRight=$1be4
+    .label NoJump=$1c05
+    .label CheckKickLeft=$1bd8
+    .label Exit=$1c08
+  }
+  .label NearestValidFloor=$1d68
+  .label CheckDead=$23df {
+    .label NotMine=$23f0
+    .label NotDead=$2419
+    .label IsDead=$23e7
+    .label NotCannon=$2405
+    .label NotFinished=$240a
+  }
+  .label CannonFodder_Update=$19e2 {
+    .label NotBoss=$1a19
+    .label NotTrainer=$1a10
+    .label Slow=$1a24
+    .label IsTrainer=$19ee
+    .label NotSlow=$1a2c
+    .label DoneDead=$19e2
+    .label MakeCrouch=$19fb
+    .label Exit=$1a0f
+  }
+  .label RT=$80
+  .label FL=$d
+  .label UpdateFunctions_MSB=$2327
+  .label Gunner_Shoot=$1a2f {
+    .label FireRight=$1a64
+    .label FireLeft=$1a5a
+    .label NotGrenade=$1a88
+    .label CanShoot=$1a45
+    .label Exit=$1a6c
+  }
+  .label GetNearestY=$1dba {
+    .label Loop=$1dc0
+    .label NotValid=$1dce
+  }
+  .label Mine_Update=$1e68 {
+    .label NotDead=$1e71
+  }
+  .label FS=$46
+  .label UpdateBoss=$1ff1 {
+    .label Ready=$1ffa
+    .label GoingLeft=$200e
+    .label Done=$204e
+    .label NotDog=$205b
+    .label LevelComplete=$2081
+    .label SetTime=$2073
+    .label NotYet=$208d
+    .label DoLeft=$2041
+    .label NotFlameThrower=$2069
+    .label NotGrenadier=$2062
+    .label Exit=$1ff9
+  }
+  .label DOG_TRAINER=$4e
+  .label SpawnRocketLauncher=$1f05 {
+  }
+  .label SF=$5
+  .label SG=$7
+  .label FAST_FLAG=$46
+  .label SpawnWeapon=$1f7b {
+    .label WasCrawling=$1fc4
+  }
+  .label KB=$2
+  .label Gunner_Update=$1a92 {
+    .label NotGrenade=$1acd
+    .label Slow=$1a9d
+    .label NotSlow=$1aa5
+    .label NowControl=$1aff
+    .label IsShooting=$1aad
+    .label NotShooting=$1ab0
+    .label CheckJump=$1ab4
+    .label StartShot=$1ae5
+    .label NotFast=$1a92
+    .label CheckShooting=$1aa9
+    .label NotFire=$1afc
+    .label NoAdd=$1ad4
+    .label Exit=$1afb
+  }
+  .label LevelAmount=$1dd2
+  .label SpawnGrenadier=$1f3a {
+  }
+  .label SpawnCrawler=$1f57 {
+  }
+  .label CheckGunnerSpawn=$1b02 {
+    .label NotKickBoxer=$1b37
+    .label LeftSide=$1b16
+    .label RightSide=$1b29
+    .label Either=$1b46
+    .label IsKickboxer=$1b35
+    .label Exit=$1b15
+    .label NoWeapon=$1b5c
+  }
+  .label SR=$6
+  .label SpawnDog=$2093 {
+    .label GoLeft=$2099
+    .label GoRight=$209e
+    .label Exit=$20a0
+  }
+  .label CF=$0
+  .label EnemyEnd=$2473
+  .label Weapon_Update=$1fda {
+    .label NoMove=$1ff0
+  }
+  .label Throw_Grenade=$1b8a {
+    .label FireLeft=$1b98
+  }
+  .label CN=$3
+  .label GR=$c
+  .label CheckSpecificSpawn=$1cc5 {
+    .label NotRocket=$1d2a
+    .label NotDog=$1d48
+    .label IsRocket=$1d24
+    .label Force=$1cd9
+    .label IsCannon=$1d02
+    .label NotForce=$1d5c
+    .label NotCrawler=$1d34
+    .label NotKickboxer=$1cf2
+    .label NotGrenadier=$1d3e
+    .label Exit2=$1ccd
+    .label IsSupply=$1d1a
+    .label Okay=$1cce
+    .label NotMine=$1d12
+    .label NotSupply=$1d20
+    .label IsMine=$1d0c
+    .label NotCannon=$1d08
+    .label FinishSpawn=$1d48
+    .label Exit=$1d62
+  }
+  .label DeadColours=$23dd
+  .label WeaponColours=$1f78
+  .label CR=$9
+  .label GetValidFloors=$1d79 {
+  }
+  .label SpawnBossGrenadier=$1f40 {
+  }
+  .label Dog_Update=$20b4 {
+    .label NoJump=$20f3
+    .label GoLeft=$20d2
+    .label GoRight=$20c4
+    .label Jump=$20dd
+    .label Exit=$20f8
+  }
+  .label FloorY=$1d63
+  .label YSize=$1c15
+  .label CannonSpawn=$1b7a {
+  }
+  .label WeaponStateIDs=$1f75
+  .label Cannon_Update=$1bb8 {
+    .label Exit=$1bc1
+  }
+}
+.label MAIN=$2000 {
+  .label PerformFrameCodeFlag=$1000
+  .label upstart_end=$100b
+  .label WaitForIRQ=$101d {
+  }
+  .label MainEnd=$102d
+  .label MapCopied=$100b
+  .label RANDOM_TIMER=$ff00
+  .label EOR=$ff1e
+  .label CurrentStage=$1004
+  .label GameMode=$100a
+  .label Checkpoint=$100c
+  .label Entry=$100d {
+    .label SkipMap=$1017
+  }
+  .label Random=$1026 {
+  }
+  .label Sprites=$a00
+  .label UpstartEnd=$100d
+  .label Upstart=$1001
+  .label Main=$100d
+}
+.label SFX_BUTTON=$1
+.label BANK_IN_RAM=$ff3f
+.label RED_MULT=$a
+.label SFX_THROW=$3
+.label STATE_STAB_RIGHT=$8
+.label MAX_BULLETS=$6
+.label TRUE=$1
+.label ENEMY_ROCKET_LAUNCHER=$b
+.label WEAPON_ROCKET=$3
+.label STATE_DEAD_LEFT=$18
+.label GRAVITY=$d
+.label STATE_SHOOT_RIGHT=$f
+.label WEAPON_GUN=$1
+.label NTSC=$1
+.label WEAPON_KNIFE=$0
+.label ROCKET=$3
+.label PLAYER_CHAR_START=$b7
+.label WHITE_MULT=$9
+.namespace LIVES {
+  .label Decrease=$2aa3 {
+    .label CheckDead=$2aaa
+    .label Okay=$2ab4
+    .label DrawLives=$2aa5
+  }
+  .label Increase=$2ab5 {
+  }
+}
+.label SCREEN_RAM=$3400
+.label ENEMY_GUNNER=$1
+.label RIGHT_MASK=$2
+.namespace DISK {
+  .label Routine07D9=$2f7e
+  .label SETLFS=$ffba
+  .label Load=$2f90 {
+    .label Loop=$2fd0
+    .label RestoreKernelValues=$2f99
+    .label Loop2=$2f9b
+  }
+  .label DiskEnd=$2ff6
+  .label LOAD=$ffd5
+  .label TAPE=$1
+  .label Vectors=$2f8a
+  .label Disk=$2f7c
+  .label SETNAM=$ffbd
+  .label DISK=$8
+  .label FNAME=$2f7c
+}
+.label SFX_WRONG=$5
+.label KNIFE=$0
+.label ENEMY_SUPPLY_FLAME=$5
+.namespace SCORE {
+  .label AddHundreds=$2bf0 {
+  }
+  .label Add=$2bf2 {
+    .label Okay=$2c03
+    .label Done=$2c0f
+    .label CheckOverflow=$2bf9
+  }
+  .label SetHigh=$2bc0 {
+  }
+  .label AddThousands=$2beb {
+  }
+  .label Reset=$2bd6 {
+    .label Loop=$2bd8
+  }
+  .label CheckHighScore=$2c10 {
+    .label Loop=$2c12
+    .label Next=$2c1f
+    .label NoHigh=$2c24
+  }
+  .label CopyScore=$2bdf {
+    .label Loop=$2be1
+  }
+  .label Display=$2c25 {
+    .label Loop=$2c2a
+  }
+}
+.label DIR_OFFSET=$10
+.label STATE_CLIMB=$20
+.label STATE_DOG_LEFT=$2d
+.label WEAPON_HOLDER_FLAG=$4d
+.label INTERRUPT_VECTOR=$fffe
+.label JOY_PORT_2=$dc00
+.label ENEMY_SUPPLY_GRENADE=$7
+.label LEAD_ENEMY_INDICATOR=$50
+.namespace COMPLETE {
+  .label DrawText=$13cf {
+    .label Loop=$13d1
+    .label Second=$13fc
+    .label Third=$13f6
+    .label Store=$1405
+    .label First=$1402
+  }
+  .label Loop=$1432 {
+  }
+  .label LevelComplete=$132a
+  .label ArlaRow=$7
+  .label DrawLoading=$13c3 {
+    .label Loop=$13c5
+  }
+  .label Row0=$1334
+  .label Row1=$1347
+  .label CanFire=$141e {
+    .label NoFire=$1430
+    .label CanFire=$1427
+  }
+  .label FireRow=$9
+  .label NameRow=$4
+  .label KonamiRow=$6
+  .label Show=$132a {
+  }
+  .label Row3d=$13b9
+  .label CharStart=$a
+  .label LevelCompleteEnd=$143e
+  .label Row3c=$13a6
+  .label Row2=$135a
+  .label Row3b=$1393
+  .label Row3=$136d
+  .label Row3a=$1380
+}
+.label SFX_CONVEYOR=$6
+.namespace GAME {
+  .label Loop=$1214 {
+    .label Okay=$122e
+    .label Skip=$122e
+    .label NotLive=$1242
+  }
+  .label NewLevel=$11f1 {
+  }
+  .label SetupScreen=$10ea {
+    .label SkipCopy=$1105
+  }
+  .label GameEnd=$1245
+  .label ShowLevel=$113e {
+    .label NoReduce=$116a
+    .label WaitLoop=$115b
+  }
+  .label DrawHud=$11bb {
+    .label Loop=$11bd
+    .label NoScore=$11d1
+  }
+  .label AdjustSpawnIndex=$1126 {
+    .label CheckSector=$1129
+    .label Okay=$1134
+  }
+  .label Game=$10ca
+  .label ResetFineScroll=$120d {
+  }
+  .label SetColoursAndMode=$110c {
+  }
+  .label Hud1=$1196
+  .label Show=$10db {
+  }
+  .label NewGame=$10ca {
+  }
+  .label NextLevel=$11e0 {
+  }
+  .label RestartLevel=$1138 {
+  }
+}
+.namespace ENTITY {
+  .label Entity=$26b9
+  .label FrameUpdate=$26b9 {
+    .label Exit=$26c8
+  }
+  .label EntityEnd=$2746
+  .label CheckSurroundings=$26ce {
+    .label NotLadder=$26f2
+    .label CantClimbDown=$272d
+    .label IsFloor=$26fb
+    .label NotFloor=$2708
+    .label OnGround=$271c
+    .label Exit=$271b
+  }
+  .label UpdateSprites=$272e {
+    .label BulletLoop=$273d
+    .label EndBulletLoop=$2740
+    .label EnemyLoop=$2730
+    .label EndEnemyLoop=$2738
+  }
+}
+.label CYAN_MULT=$b
+.label STATE_KICK_RIGHT=$b
+.label ENEMY_WEAPON=$8
+.label NUM_CHARS_FACE=$2c
+.namespace SPRITE {
+  .label MiddleRightCharsLSB=$2cd5
+  .label BottomLeftCharsLSB=$2d04
+  .label Place3x1=$2867 {
+  }
+  .label MiddleRightCharsMSB=$2def
+  .label BottomLeftCharsMSB=$2e1e
+  .label Draw=$296f {
+  }
+  .label CopySpriteData=$29ab {
+    .label BottomRight=$2a4d
+    .label NoBullets=$29c8
+    .label BottomLeft=$2a35
+    .label MiddleLeft=$29ff
+    .label TwoByThree=$2a1f
+    .label TopRight=$29e7
+    .label NoStab=$29c1
+    .label MiddleRight=$2a17
+    .label TopLeft=$29cf
+  }
+  .label SpriteCharAddress_MSB=$295f
+  .label BL=$1e
+  .label RestoreChars=$2788 {
+    .label Skip2=$27a6
+    .label Skip1=$2799
+    .label Okay=$27cd
+    .label ThreeByOne=$27c3
+    .label Skip6=$2803
+    .label Skip5=$27f6
+    .label Skip4=$27e8
+    .label Skip3=$27db
+    .label TwoByThree=$27c6
+  }
+  .label SpriteCharAddress_LSB=$294f
+  .label CommonDraw=$297d {
+  }
+  .label BackupChars=$2746 {
+    .label TwoByThree=$2761
+  }
+  .label SpriteEnd=$2aa3
+  .label PlaceChars=$2804 {
+    .label Okay=$2813
+    .label TwoByThree=$280c
+  }
+  .label BULLET_CHAR_START=$f3
+  .label TopRightCharsLSB=$2c77
+  .label MaskTable=$2e7c
+  .label TopRightCharsMSB=$2d91
+  .label GetBgCharAddress=$2987 {
+  }
+  .label Restore3x1=$2859 {
+    .label Skip=$2866
+  }
+  .label Restore1x1=$28d5 {
+    .label Skip=$28e6
+  }
+  .label Sprite=$2746
+  .label RowStart_LSB=$2913
+  .label RowStart_MSB=$292c
+  .label TopLeftCharsMSB=$2d62
+  .label TopLeftCharsLSB=$2c48
+  .label BottomRightCharsMSB=$2e4d
+  .label SpriteStart=$2945
+  .label SpriteDataEnd=$2e7c
+  .label MiddleLeftCharsMSB=$2dc0
+  .label MiddleLeftCharsLSB=$2ca6
+  .label Backup3x1=$284f {
+  }
+  .label MaskTableEnd=$2f7c
+  .label CalculatePositionAddresses=$2a89 {
+    .label StoreAddresses=$2a92
+  }
+  .label BottomRightCharsLSB=$2d33
+  .label BulletCharMSB=$28a7
+  .label Copy1x1=$28e7 {
+    .label Okay=$2903
+  }
+  .label CopyCharBytes=$2a65 {
+    .label Loop=$2a67
+    .label Branch=$2a67 {
+      .label Dest=$2a7f
+      .label Bg=$2a6a
+      .label Source=$2a6e
+    }
+  }
+  .label SpriteData=$2c48
+  .label Copy3x1=$2887 {
+  }
+  .label Draw1x1=$28b1 {
+    .label PlaceChars=$28c6
+    .label BackupChar=$28b9
+    .label CreateMaskedChar=$28c3
+  }
+  .label BulletCharLSB=$289d
+}
+.label FLAME=$2
+.label FACE_RIGHT_OFFSET=$0
+.label NIL=$0
+.label TED=$3800 {
+  .label INTERRUPT_MASK_REGISTER=$ff0a
+  .label BORDER_COLOR=$ff19
+  .label INTERRUPT_VECTOR=$fffe
+  .label CHANNEL_2_HI_BITS=$ff10
+  .label VERTICAL_CONTROL=$ff06
+  .label CHARSET_ADDRESS=$ff13
+  .label COLOR_ADDRESS=$5
+  .label SCREEN_ADDRESS=$2
+  .label CHANNEL_1_HI_BITS=$ff12
+  .label SCREEN_CONTROL=$ff06
+  .label MEMORY_SETUP=$d018
+  .label RASTER_Y=$ff0b
+  .label EXTENDED_BG_COLOR_1=$ff16
+  .label CHANNEL_1_FREQ=$ff0e
+  .label EXTENDED_BG_COLOR_2=$ff17
+  .label INTERRUPT_FLAGS=$ff09
+  .label CURRENT_RASTER_Y=$ff1d
+  .label BACKGROUND_COLOR=$ff15
+  .label BANK_SELECT=$dd00
+  .label SOUND_CONTROL=$ff11
+  .label SCREEN_CONTROL_2=$ff07
+  .label VIDEO_ADDRESS=$ff14
+  .label CHANNEL_2_FREQ=$ff0f
+  .label COLOR_RAM=$3000
+  .label SND_1_CHAR_ROM_RAM=$ff12
+}
+.label SFX_CRASH=$4
+.label STATE_CROUCH_LEFT=$1a
+.label BLUE_MULT=$e
+.label WEAPON_FLAME=$2
+.namespace TITLE {
+  .label TitleText=$12a4 {
+    .label Loop=$12a6
+  }
+  .label Loop=$12d5 {
+  }
+  .label SetMode=$1245 {
+  }
+  .label TitleEnd=$12e9
+  .label ArlaRow=$7
+  .label Title=$1245
+  .label Tit4=$1295
+  .label FireRow=$9
+  .label Tit3=$1286
+  .label Tit2=$1277
+  .label NameRow=$4
+  .label KonamiRow=$6
+  .label Tit1=$1268
+  .label LIVES=$5
+  .label Show=$1255 {
+  }
+  .label CharStart=$c
+}
+.label FALSE=$0
+.label FLOOR_ROW=$17
