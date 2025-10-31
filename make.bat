@@ -37,7 +37,7 @@ assets\exomizer sfx sys -t 4 -x "inc $ff19" bin/main.prg -o ./bin/gb.prg >nul 2>
 if /i "%disk%"=="true" (
        echo "Putting files on disk..."
       java -cp c:\C64\Tools\KickAssembler\KickAss.jar cml.kickass.KickAssembler Scripts/game/system/create_disk.asm -odir "../../../bin" 
-       start "" C:\C64\Tools\Vice2\xplus4.exe -autostart ./bin/gb.d64 -moncommands bin/main.vs
+       start "" C:\C64\Tools\Vice\xplus4w.exe -autostart ./bin/gb.d64 -moncommands bin/main.vs
 ) else (
 
   echo "Starting VICE from prg..."

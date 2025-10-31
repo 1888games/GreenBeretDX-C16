@@ -127,7 +127,7 @@
 			
 		lda #0          // 0=load, 1=verify
 		//ldx #$00       
-        //ldy #$30   
+      //  ldy #$30   
 
 
         jsr LOAD
